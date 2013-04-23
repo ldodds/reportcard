@@ -1,0 +1,56 @@
+
+<h1><%= @uri %></h1>
+
+<h2>Test 1 - Icons</h2>
+
+<table>
+<tr>
+<% @card.each do |klazz| %>
+ <!--<span style="margin: 10"> -->
+ <% if klazz[0] != "Term" %>
+  <td>
+ 	<span style="margin: 10"> 
+	 <% if klazz[1] > 5 %>
+	   <img title="<%=klazz[0]%>" src="/<%=klazz[0].downcase%>.svg"/>
+
+	 <% else %>
+	   <img title="<%=klazz[0]%>" src="/<%=klazz[0].downcase%>-off.svg"/>
+	 <% end %>
+	</span>	 
+ <% end %> 
+ <!-- </span> -->
+ </td>	 
+<% end %>
+</tr>
+<tr>
+<% @card.each do |klazz| %>
+ <% if klazz[0] != "Term" %>
+ 	<!--<span style="margin: 10"> -->
+	 <td style="text-align: center"> 
+ 	<span style="margin: 10">
+ 	<%= klazz[0] %>
+ 	</span>
+ 	</td>
+ <% end %>	 
+<% end %>
+</tr>
+</table>
+
+<h2>Test 2 - Counts</h2>
+
+<table>
+<% @card.each do |klazz| %>
+<tr><td><%= klazz[0] %></td><td><%= klazz[1] %></td><tr>
+<% end %>
+</table>
+
+<!--
+<h2>Class Partitions</h2>
+
+<table border="1">
+<% @classes.each do |klazz| %>
+<tr><td><%= klazz[0] %></td><td><%= klazz[1] %></td><tr>
+<% end %>
+
+</table>
+-->
